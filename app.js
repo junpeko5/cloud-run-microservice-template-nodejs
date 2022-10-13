@@ -13,7 +13,7 @@
 // limitations under the License.
 
 const express = require('express');
-const {pinoHttp, logger} = require('./utils/logging');
+const { pinoHttp, logger } = require('./utils/logging');
 
 const app = express();
 
@@ -23,10 +23,10 @@ app.use(pinoHttp);
 // Example endpoint
 app.get('/', async (req, res) => {
   // Use basic logger without HTTP request info
-  logger.info({logField: 'custom-entry', arbitraryField: 'custom-entry'}); // Example of structured logging
+  logger.info({ logField: 'custom-entry', arbitraryField: 'custom-entry' }); // Example of structured logging
   // Use request-based logger with log correlation
   req.log.info('Child logger with trace Id.'); // https://cloud.google.com/run/docs/logging#correlate-logs
-  res.send('Hello World!');
+  res.send('Hello World!!!!');
 });
 
 module.exports = app;
